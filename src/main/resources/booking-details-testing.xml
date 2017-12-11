@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name ="BookingDetails" thread-count="2">
+    <test name="Booking details test scenario">
+        <parameter name="EMAIL" value="sutbookingcom@gmail.com" />
+        <parameter name="PASSWORD" value="adminepam16" />
+        <parameter name="TRIP-DESTINATION" value="Minsk" />
+        <parameter name="TRIP-CHECKIN" value="20" />
+        <parameter name="TRIP-CHECKOUT" value="21" />
+        <parameter name="IMPL_TIME_OUT" value="10" />
+        <parameter name="LOAD_TIME_OUT" value="25" />
+        <parameter name="WORKFLOW_USER_INDEX" value="0" />
+        <parameter name="MAIN_PAGE_INDEX" value="0" />
+        <parameter name="HOTEL_FILTER_PAGE_INDEX" value="1" />
+        <parameter name="HOTEL_PAGE_INDEX" value="2" />
+        <parameter name="BOOKING_DETAILS_PAGE_INDEX" value="3"/>
+        <parameter name="TRIP-STAR_RATING_FIRST" value="2" />
+        <parameter name="TRIP-STAR_RATING_SECOND" value="3" />
+
+        <classes>
+            <class name="tests.SignInTest" />
+            <class name="tests.ValidDatesTest" />
+            <class name="tests.StarRatingCheckboxesTest" />
+            <class name="tests.CheckSelectedRooms"/>
+            <class name="tests.RoomSelectionTest"/>
+            <class name="tests.BookingDetailsTest"/>
+        </classes>
+    </test>
+</suite>

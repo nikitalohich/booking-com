@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http:\\testng.org/testng-1.0.dtd" >
+
+<suite name ="Registration" parallel="true" thread-count="2">
+    <test name="registration_account">
+        <parameter name="EMAIL" value="sutbookingcom@yandex.by" />
+        <parameter name="PASSWORD" value="adminepam16" />
+        <parameter name="IMPL_TIME_OUT" value="15" />
+        <parameter name="LOAD_TIME_OUT" value="25" />
+        <parameter name="USER_TOREGISTER_INDEX" value="0" /> <!-- Defines index of the user in UserList array -->
+        <classes>
+            <class name="tests.RegisterAccountTest" />
+            <class name="tests.KidsAgeAutofillTest" />
+        </classes>
+    </test>
+</suite>

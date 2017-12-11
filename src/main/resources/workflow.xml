@@ -1,0 +1,56 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name ="BookingWorkflow">
+    <test name="MainScenario">
+        <parameter name="EMAIL" value="sutbookingcom@gmail.com" />
+        <parameter name="PASSWORD" value="adminepam16" />
+        <parameter name="CITY" value="Passau" />
+        <parameter name="COUNTRY" value="Germany" />
+        <parameter name="ADDRESS" value="Angerstraße" />
+        <parameter name="PHONE" value="123456789" />
+        <parameter name="CARD_TYPE" value="Visa" />
+        <parameter name="CARD_NUMBER" value="4716888269922824" />
+        <parameter name="EXPIRATION_DATE_MONTH" value="02" />
+        <parameter name="EXPIRATION_DATE_YEAR" value="2018" />
+        <parameter name="EXPIRATION_INVALID_DATE_YEAR" value="2017" />
+        <parameter name="CARD_CVC" value="908" />
+        <parameter name="TRIP-DESTINATION" value="Passau" />
+        <parameter name="TRIP-CHECKIN" value="20" /> <!-- Will be changed with the method MainPage.enterDates -->
+        <parameter name="TRIP-CHECKOUT" value="21" /> <!-- Will be changed with the method MainPage.enterDates -->
+        <parameter name="TRIP-STAR_RATING_FIRST" value="2" />
+        <parameter name="TRIP-STAR_RATING_SECOND" value="3" />
+        <parameter name="TRIP-BUDGET" value="300" />
+        <parameter name="EXPECTED_KIDS_AGE" value="12" />
+        <parameter name="IMPL_TIME_OUT" value="10" />
+        <parameter name="LOAD_TIME_OUT" value="25" />
+        <parameter name="USER_TOREGISTER_INDEX" value="0" /> <!-- Defines index of the user in UserList array -->
+        <parameter name="WORKFLOW_USER_INDEX" value="1" /> <!-- Defines index of the user in UserList array -->
+        <parameter name="INVALID_CARD_USER_INDEX" value="2" /> <!-- Defines index of the user in UserList array -->
+        <parameter name="MAIN_PAGE_INDEX" value="0" />
+        <parameter name="HOTEL_FILTER_PAGE_INDEX" value="1" /><!-- Defines index of the page in PageList array -->
+        <parameter name="HOTEL_PAGE_INDEX" value="2" />
+        <parameter name="BOOKING_DETAILS_PAGE_INDEX" value="3"/>
+        <parameter name="CONFIRM_RESERVATION_PAGE_INDEX" value="4" />
+        <parameter name="BOOKING_CONFIRMATION_PAGE_INDEX" value="5" />
+        <parameter name="MANAGE_BOOKING_PAGE_INDEX" value="6" />
+        <parameter name="CANCEL_BOOKING_PAGE_INDEX" value="7" />
+        <classes>
+            <class name="tests.RegisterAccountTest"/>
+            <class name="tests.KidsAgeAutofillTest"/>
+            <class name="tests.SignInTest" />
+            <class name="tests.InvalidDestinationTest" />
+            <class name="tests.SearchWithoutDatesTest" />
+            <class name="tests.ValidDatesTest" />
+            <class name="tests.BudgetCheckboxesTest" />
+            <class name="tests.StarRatingCheckboxesTest" />
+            <class name="tests.IncorrectSelectRooms"/>
+            <class name="tests.CheckSelectedRooms"/>
+            <class name="tests.RoomSelectionTest"/>
+            <class name="tests.BookingDetailsTest"/>
+            <class name="tests.BookingWithFailDataCardTest"/>
+            <class name="tests.BookingLastStepTest"/>
+            <class name="tests.CancelBookingTest"/>
+            <class name="tests.SignOutTest" />
+        </classes>
+    </test>
+</suite>
